@@ -39,7 +39,7 @@ const ProfileSection = () => {
 					{/* Resume Button */}
 					<div className="pt-2">
 						<a
-							href="/Vivek Matta - 2025 Resume (updated).pdf"
+							href="/Vivek Matta Master's Resume New Edit.pdf"
 							target="_blank"
 							className="inline-flex items-center justify-center px-4 py-2 border border-gray-300 text-gray-700 font-medium rounded-md hover:bg-gray-50 transition-colors text-sm"
 						>

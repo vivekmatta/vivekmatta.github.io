@@ -1,25 +1,7 @@
-const ProjectsSection = () => {
-	const projects = [
-		{
-			title: 'Cambridge Mobile Telematics Innovation Lab 2025 Q3 Hackathon',
-			period: 'Jun 2025 - Jul 2025',
-			description: 'Led frontend development using SwiftUI and Cursor AI, creating dynamic map visualizations, analytics dashboards, and gamification features. Integrated AI for intelligent route suggestions and personalized safety insights.',
-			technologies: ['SwiftUI', 'iOS Development', 'AI Integration', 'MapKit']
-		},
-		{
-			title: 'Embedded Systems Design Lead - Notiphones',
-			period: 'Jan 2025 - May 2025',
-			description: 'Designed and fabricated PCB for wearable alert system with PWM-driven vibration motor, RGB LED indicators, and USB-C power circuit. Programmed ESP32-S3 in Embedded C for BLE-triggered vibration under 1s latency.',
-			technologies: ['Embedded C', 'PCB Design', 'ESP32-S3', 'BLE', 'Oscilloscope']
-		},
-		{
-			title: 'SoCET Project - System-on-Chip Design',
-			period: 'Sep 2024 - Jan 2025',
-			description: 'Designed PCB layouts for System-on-Chip prototypes and wrote SystemVerilog modules for RISC-V SoCs. Validated functionality using PDB debug workflows.',
-			technologies: ['SystemVerilog', 'RISC-V', 'PCB Design', 'SoC']
-		}
-	];
+import Link from 'next/link';
+import { projects } from '../data/projects';
 
+const ProjectsSection = () => {
 	return (
 		<div className="py-6 bg-white px-6">
 			<div className="space-y-4 max-w-2xl mx-auto">
@@ -36,16 +18,26 @@ const ProjectsSection = () => {
 
 								<div className="space-y-2">
 									<div className="flex flex-col md:flex-row md:items-center md:justify-between">
-										<h4 className="text-md font-medium text-gray-900">{project.title}</h4>
+										<Link
+											href={`/projects/${project.slug}`}
+											className="text-md font-medium text-gray-900 hover:text-blue-600 transition-colors cursor-pointer"
+										>
+											{project.title}
+										</Link>
 										<span className="text-sm text-gray-500">{project.period}</span>
 									</div>
-									<p className="text-sm text-gray-600 leading-relaxed">{project.description}</p>
+									<p className="text-sm text-gray-600 leading-relaxed">{project.shortGist}</p>
 									<div className="flex flex-wrap gap-1.5">
-										{project.technologies.map((tech, techIndex) => (
+										{project.technologies.slice(0, 6).map((tech, techIndex) => (
 											<span key={techIndex} className="px-2 py-1 text-xs bg-blue-50 text-blue-700 rounded-full ring-1 ring-blue-200">
 												{tech}
 											</span>
 										))}
+										{project.technologies.length > 6 && (
+											<span className="px-2 py-1 text-xs bg-gray-50 text-gray-600 rounded-full ring-1 ring-gray-200">
+												+{project.technologies.length - 6} more
+											</span>
+										)}
 									</div>
 								</div>
 							</div>

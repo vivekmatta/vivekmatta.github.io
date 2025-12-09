@@ -1,28 +1,42 @@
 const ExperienceSection = () => {
 	const experiences = [
 		{
-			role: 'Embedded Software Engineer',
+			role: 'Embedded Software Engineer Intern',
 			company: 'Cambridge Mobile Telematics',
-			period: 'Jun 2025 - Present',
-			highlights: 'Co-developed benchtop shake table for accelerometer testing, built Python visualization tools, developed HIL routines for firmware validation',
+			period: 'June 2025 – Aug 2025',
+			highlights: [
+				'Co-developed a benchtop shake table for accelerometer and IoT testing, programming low-level C firmware to generate 0–3200 Hz vibration profiles for precise hardware validation',
+				'Initiated and developed a Python logging tool, cutting test iteration time by 40% and improving debugging efficiency across engineering teams',
+				'Led cross-functional collaboration with mechanical and sensor teams to define interface requirements and testing protocols, accelerating hardware validation across multiple product iterations',
+			],
 		},
 		{
 			role: 'Undergraduate Teaching Assistant',
 			company: 'Purdue University',
 			period: 'Jan 2025 - Jun 2025',
-			highlights: 'Guided 50+ students in circuit analysis experiments, mentored in circuit design and troubleshooting, evaluated assignments and lab reports',
+			highlights: [
+				'Guided 50+ students in circuit analysis experiments',
+				'Mentored in circuit design and troubleshooting',
+				'Evaluated assignments and lab reports',
+			],
 		},
 		{
 			role: 'Undergraduate Student Researcher - SoCET',
 			company: 'Purdue University',
 			period: 'Jan 2025 - May 2025',
-			highlights: 'Designed custom test boards with eFabless and STM32 chips, developed high-performance FPGA board design, created schematics in KiCad 8',
+			highlights: [
+				'Designed custom test boards with eFabless and STM32 chips',
+				'Developed high-performance FPGA board design',
+				'Created schematics in KiCad 8',
+			],
 		},
 		{
 			role: 'Software Engineer Intern',
 			company: 'Cambridge Mobile Telematics',
-			period: 'May 2024 - Aug 2024',
-			highlights: 'Integrated APIs for 12,000+ SIM cards data management, built Tableau dashboards reducing response time by 50%, automated data pipelines with AWS Lambda',
+			period: 'June 2024 – Aug 2024',
+			highlights: [
+				'Implemented Twilio and ConnectedU APIs for 12,000+ SIMs and built monitoring dashboards, reducing anomaly response time by 50%',
+			],
 		},
 	];
 
@@ -46,7 +60,17 @@ const ExperienceSection = () => {
 										<span className="text-sm text-gray-500">{exp.period}</span>
 									</div>
 									<p className="text-sm font-medium text-gray-600">{exp.company}</p>
-									<p className="text-sm text-gray-600 leading-relaxed">{exp.highlights}</p>
+									{Array.isArray(exp.highlights) ? (
+										<ul className="list-disc list-inside space-y-1">
+											{exp.highlights.map((highlight, idx) => (
+												<li key={idx} className="text-sm text-gray-600 leading-relaxed">
+													{highlight}
+												</li>
+											))}
+										</ul>
+									) : (
+										<p className="text-sm text-gray-600 leading-relaxed">{exp.highlights}</p>
+									)}
 								</div>
 							</div>
 						</div>

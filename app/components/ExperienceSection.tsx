@@ -1,5 +1,12 @@
+interface Experience {
+	role: string;
+	company: string;
+	period: string;
+	highlights: string[];
+}
+
 const ExperienceSection = () => {
-	const experiences = [
+	const experiences: Experience[] = [
 		{
 			role: 'Embedded Software Engineer Intern',
 			company: 'Cambridge Mobile Telematics',
@@ -60,17 +67,13 @@ const ExperienceSection = () => {
 										<span className="text-sm text-gray-500">{exp.period}</span>
 									</div>
 									<p className="text-sm font-medium text-gray-600">{exp.company}</p>
-									{Array.isArray(exp.highlights) ? (
-										<ul className="list-disc list-inside space-y-1">
-											{exp.highlights.map((highlight, idx) => (
-												<li key={idx} className="text-sm text-gray-600 leading-relaxed">
-													{highlight}
-												</li>
-											))}
-										</ul>
-									) : (
-										<p className="text-sm text-gray-600 leading-relaxed">{exp.highlights}</p>
-									)}
+									<ul className="list-disc list-inside space-y-1">
+										{exp.highlights.map((highlight, idx) => (
+											<li key={idx} className="text-sm text-gray-600 leading-relaxed">
+												{highlight}
+											</li>
+										))}
+									</ul>
 								</div>
 							</div>
 						</div>

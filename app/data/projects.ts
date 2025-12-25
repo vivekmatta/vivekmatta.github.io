@@ -16,6 +16,55 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
+		slug: 'gesture-controlled-info-hub',
+		title: 'Gesture-Controlled Info Hub',
+		period: 'Sep 2025 - Dec 2025',
+		shortGist: 'Built a real-time gesture recognition system using an IMU and Edge Impulse, collecting fixed-rate accelerometer data (AX/AY) via touch-triggered windows and classifying four gestures (W, S, Q, J) on-device.',
+		fullDescription: `A gesture-controlled embedded "info hub" that uses inertial sensing and on-device machine learning to trigger contextual information displays. The system allows a user to perform simple hand gestures to retrieve weather, stock prices, quotes, and jokes, all rendered on an OLED screen in real time.
+
+The device uses an IMU to capture fixed-rate accelerometer data (AX/AY) during short, touch-triggered recording windows. Each gesture is recorded over a deterministic time window, converted into a feature vector, and classified on-device using a model trained and deployed with Edge Impulse.
+
+Four gestures were trained and mapped to system actions: W (Weather), S (Stock price), Q (Quote), and J (Joke). A capacitive touch pin is used to explicitly gate recording, ensuring clean data collection and preventing accidental triggers.
+
+After establishing Wi-Fi connectivity, the system prefetches and caches network data (weather and stock prices) to avoid repeated API calls during runtime. Quotes and jokes are fetched live on demand. Results are rendered on a 128×64 OLED display, with output persisting until the next user interaction, creating a clear and intuitive user experience.`,
+		technologies: [
+			'Embedded C',
+			'C++',
+			'ESP32',
+			'Edge Impulse',
+			'IMU',
+			'Wi-Fi',
+			'OLED Display',
+			'I²C',
+			'Real-Time Systems'
+		],
+		githubUrl: 'https://github.com/Anishka-Singh/Gesture-Controlled-Info-Hub',
+		details: {
+			overview: 'A gesture-controlled embedded "info hub" that uses inertial sensing and on-device machine learning to trigger contextual information displays. The project runs entirely on an ESP32 microcontroller and combines sensor data acquisition, real-time inference, network communication, and UI rendering within a tightly constrained embedded environment.',
+			keyFeatures: [
+				'Real-time gesture recognition using IMU data and on-device ML inference',
+				'Touch-gated data capture for reliable gesture segmentation',
+				'Four gesture-driven modes: weather, stocks, quotes, jokes',
+				'Wi-Fi HTTP integration with REST APIs and JSON parsing',
+				'Prefetching and caching of network data to reduce latency',
+				'Persistent OLED UI updated only on user interaction',
+				'Modular, event-driven embedded architecture'
+			],
+			challenges: [
+				'Ensuring deterministic sensor sampling under real-time constraints',
+				'Balancing ML inference latency with network operations on a microcontroller',
+				'Designing a clean UI flow within a limited OLED resolution',
+				'Managing multiple subsystems (IMU, touch, Wi-Fi, display) on shared I²C resources'
+			],
+			results: [
+				'Reliable real-time gesture classification with low false triggers',
+				'Responsive, intuitive interaction loop driven entirely by gestures',
+				'Stable integration of ML inference, networking, and display rendering on constrained hardware',
+				'Fully self-contained embedded system demonstrating end-to-end ML deployment on the edge'
+			]
+		}
+	},
+	{
 		slug: 'smart-home-kws',
 		title: 'Smart-Home Audio Keyword-Spotting',
 		period: 'Sep 2025 - Dec 2025',

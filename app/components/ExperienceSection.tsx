@@ -13,8 +13,9 @@ const ExperienceSection = () => {
 			period: 'June 2025 – Aug 2025',
 			highlights: [
 				'Co-developed a benchtop shake table for accelerometer and IoT testing, programming low-level C firmware to generate 0–3200 Hz vibration profiles for precise hardware validation',
-				'Initiated and developed a Python logging tool, cutting test iteration time by 40% and improving debugging efficiency across engineering teams',
-				'Led cross-functional collaboration with mechanical and sensor teams to define interface requirements and testing protocols, accelerating hardware validation across multiple product iterations',
+				'Initiated and developed a Python logging tool, cutting test iteration time by 40% and improving debugging efficiency',
+				'Led and managed a cross-functional team and came in 2nd place out of 45 teams at a company-wide hackathon',
+				'Designed an alert system in Python, retrieving historical geolocation data from previous customer trips with SQL queries to identify and warn users upon entering high-risk event prone zones (e.g., crash, hard braking)',
 			],
 		},
 		{
@@ -42,7 +43,8 @@ const ExperienceSection = () => {
 			company: 'Cambridge Mobile Telematics',
 			period: 'June 2024 – Aug 2024',
 			highlights: [
-				'Implemented Twilio and ConnectedU APIs for 12,000+ SIMs and built monitoring dashboards, reducing anomaly response time by 50%',
+				'Integrated Twilio and ConnectedU APIs to retrieve and store LTE data usage for over 12,000 SIM cards in Amazon Redshift, managing 5 GB of data daily and ensuring support for multiple SIM vendors',
+				'Developed comprehensive data visualization dashboards in Tableau and implemented operational alarms, resulting in a 50% reduction in response time to anomalous data usage.',
 			],
 		},
 	];

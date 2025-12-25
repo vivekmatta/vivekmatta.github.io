@@ -9,7 +9,7 @@ const AboutMeSection = () => {
 
 				<div className="space-y-4">
 					<p className="text-sm md:text-base text-gray-600 leading-relaxed">
-						I am a Purdue University graduate with a Bachelor&apos;s degree in Computer Engineering, where I gained hands-on experience in embedded systems, robotics, and hardware-software integration. Currently, I am pursuing my M.Eng. in Computer Engineering at Northwestern University, continuing my passion for bridging the gap between hardware and software.
+						I am a Purdue University graduate with a Bachelor&apos;s degree in Computer Engineering, where I gained hands-on experience in embedded systems, robotics, and hardware-software integration. Currently, I am pursuing my M.S. in Computer Engineering at Northwestern University, continuing my passion for bridging the gap between hardware and software.
 					</p>
 
 					<p className="text-sm md:text-base text-gray-600 leading-relaxed">

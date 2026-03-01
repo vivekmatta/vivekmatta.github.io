@@ -10,38 +10,50 @@ const ProjectsSection = () => {
 					<div className="h-px w-full bg-gray-200 mt-2" />
 				</div>
 
-				<div className="space-y-5">
+				<div className="space-y-3">
 					{projects.map((project, index) => (
-						<div key={index} className="relative">
-							<div className="relative pl-4 border-l-2 border-gray-200">
-								<div className="absolute -left-[5px] top-[10px] h-2.5 w-2.5 rounded-full bg-blue-400" />
-
-								<div className="space-y-2">
-									<div className="flex flex-col md:flex-row md:items-center md:justify-between">
-										<Link
-											href={`/projects/${project.slug}`}
-											className="text-md font-medium text-gray-900 hover:text-blue-600 transition-colors cursor-pointer"
+						<Link
+							key={index}
+							href={`/projects/${project.slug}`}
+							className="group block rounded-xl border border-gray-200 bg-white p-4 hover:border-blue-300 hover:shadow-sm transition-all duration-150"
+						>
+							<div className="space-y-2.5">
+								<div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1">
+									<span className="text-sm font-semibold text-gray-900 group-hover:text-blue-600 transition-colors leading-snug flex items-center gap-1.5">
+										{project.title}
+										<svg
+											className="w-3.5 h-3.5 text-gray-300 group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
 										>
-											{project.title}
-										</Link>
-										<span className="text-sm text-gray-500">{project.period}</span>
-									</div>
-									<p className="text-sm text-gray-600 leading-relaxed">{project.shortGist}</p>
-									<div className="flex flex-wrap gap-1.5">
-										{project.technologies.slice(0, 6).map((tech, techIndex) => (
-											<span key={techIndex} className="px-2 py-1 text-xs bg-blue-50 text-blue-700 rounded-full ring-1 ring-blue-200">
-												{tech}
-											</span>
-										))}
-										{project.technologies.length > 6 && (
-											<span className="px-2 py-1 text-xs bg-gray-50 text-gray-600 rounded-full ring-1 ring-gray-200">
-												+{project.technologies.length - 6} more
-											</span>
-										)}
-									</div>
+											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+										</svg>
+									</span>
+									<span className="text-xs text-gray-400 shrink-0 font-medium">{project.period}</span>
+								</div>
+
+								<p className="text-xs text-gray-500 leading-relaxed line-clamp-2">
+									{project.shortGist}
+								</p>
+
+								<div className="flex flex-wrap gap-1.5">
+									{project.technologies.slice(0, 5).map((tech, techIndex) => (
+										<span
+											key={techIndex}
+											className="px-2 py-0.5 text-xs bg-gray-100 text-gray-600 rounded-full font-medium"
+										>
+											{tech}
+										</span>
+									))}
+									{project.technologies.length > 5 && (
+										<span className="px-2 py-0.5 text-xs bg-gray-100 text-gray-400 rounded-full font-medium">
+											+{project.technologies.length - 5} more
+										</span>
+									)}
 								</div>
 							</div>
-						</div>
+						</Link>
 					))}
 				</div>
 			</div>
@@ -49,4 +61,4 @@ const ProjectsSection = () => {
 	);
 };
 
-export default ProjectsSection; 
+export default ProjectsSection;

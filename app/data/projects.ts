@@ -16,6 +16,29 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
+		slug: 'embedded-webcam-pcb',
+		title: 'Embedded Webcam PCB Design',
+		period: 'Jan 2026 – Present',
+		shortGist: 'Designed a compact 2-layer embedded webcam PCB in KiCad with custom schematic symbols, camera interface circuitry, multi-rail power regulation, and manufacturing-ready Gerber files.',
+		fullDescription: `A compact 2-layer embedded webcam PCB designed in KiCad as part of an Electrical Engineering project at Northwestern University.
+
+The board was designed from scratch, including developing schematics and performing full board routing to produce a manufacturable design that meets strict mechanical and layout constraints.
+
+Custom schematic symbols and PCB footprints were created from datasheets, integrating camera interface circuitry, multi-rail power regulation, programming headers, and debug interfaces to ensure electrical compatibility.
+
+Manufacturing-ready Gerber files were generated and ERC/DRC checks were validated to ensure fabrication compliance and assembly accuracy.`,
+		technologies: [
+			'KiCad',
+			'PCB Design',
+			'Embedded C',
+			'Camera Interface',
+			'Power Regulation',
+			'Schematic Design',
+			'Gerber Files',
+			'ERC/DRC'
+		],
+	},
+	{
 		slug: 'gesture-controlled-info-hub',
 		title: 'Gesture-Controlled Info Hub',
 		period: 'Sep 2025 - Dec 2025',

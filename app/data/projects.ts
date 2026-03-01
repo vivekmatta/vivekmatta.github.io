@@ -8,8 +8,6 @@ export interface Project {
 	githubUrl?: string;
 	details?: {
 		overview?: string;
-		challenges?: string[];
-		results?: string[];
 		keyFeatures?: string[];
 	};
 }
@@ -61,7 +59,6 @@ After establishing Wi-Fi connectivity, the system prefetches and caches network 
 			'I²C',
 			'Real-Time Systems'
 		],
-		githubUrl: 'https://github.com/Anishka-Singh/Gesture-Controlled-Info-Hub',
 		details: {
 			overview: 'A gesture-controlled embedded "info hub" that uses inertial sensing and on-device machine learning to trigger contextual information displays. The project runs entirely on an ESP32 microcontroller and combines sensor data acquisition, real-time inference, network communication, and UI rendering within a tightly constrained embedded environment.',
 			keyFeatures: [
@@ -72,18 +69,6 @@ After establishing Wi-Fi connectivity, the system prefetches and caches network 
 				'Prefetching and caching of network data to reduce latency',
 				'Persistent OLED UI updated only on user interaction',
 				'Modular, event-driven embedded architecture'
-			],
-			challenges: [
-				'Ensuring deterministic sensor sampling under real-time constraints',
-				'Balancing ML inference latency with network operations on a microcontroller',
-				'Designing a clean UI flow within a limited OLED resolution',
-				'Managing multiple subsystems (IMU, touch, Wi-Fi, display) on shared I²C resources'
-			],
-			results: [
-				'Reliable real-time gesture classification with low false triggers',
-				'Responsive, intuitive interaction loop driven entirely by gestures',
-				'Stable integration of ML inference, networking, and display rendering on constrained hardware',
-				'Fully self-contained embedded system demonstrating end-to-end ML deployment on the edge'
 			]
 		}
 	},
@@ -125,19 +110,6 @@ The inference system captures 5-second audio buffers, trims to optimal length (~
 				'Data augmentation techniques: LP/HP/BP filters, pitch-shifting, noise addition, dynamic compression',
 				'High accuracy: 99.79% validation accuracy, ~98.5% test accuracy with CNN model',
 				'Real-time inference with 5s buffer capture, trimmed to ~1.8s for optimal model input'
-			],
-			challenges: [
-				'Optimizing model size for embedded deployment on Raspberry Pi Zero 2 W',
-				'Handling real-time audio processing with latency constraints',
-				'Managing data collection and augmentation across multiple speakers',
-				'Integrating hardware peripherals (LED, LCD, sensors) with the ML inference pipeline',
-				'Balancing model accuracy with computational efficiency for edge deployment'
-			],
-			results: [
-				'Successfully deployed CNN model achieving 99.79% validation accuracy',
-				'Real-time keyword recognition with sub-second latency',
-				'Robust system handling noise and unknown commands',
-				'Complete end-to-end pipeline from data collection to hardware control'
 			]
 		}
 	},
@@ -171,18 +143,6 @@ The implementation required synchronized audio playback alongside latency-critic
 				'Synchronized audio playback with game actions',
 				'Low-latency input validation under memory and timing constraints',
 				'GPIO and I²C communication protocols'
-			],
-			challenges: [
-				'Managing real-time constraints with multiple concurrent sensor inputs',
-				'Optimizing memory usage on resource-constrained Micro:bit',
-				'Synchronizing audio playback with game state',
-				'Ensuring low-latency response to user actions',
-				'Debugging hardware-software integration issues'
-			],
-			results: [
-				'Successfully implemented real-time game loop with all sensors functional',
-				'Achieved low-latency response times meeting game requirements',
-				'Demonstrated proficiency in embedded C and microcontroller programming'
 			]
 		}
 	},
@@ -218,20 +178,6 @@ As the design lead, I also led schematic reviews, coordinated with the mechanica
 				'BLE communication for receiving wake-word detection signals',
 				'Integration with ML wake-word detection model',
 				'Real-time response system'
-			],
-			challenges: [
-				'Achieving sub-1 second latency from wake-word detection to vibration',
-				'Designing efficient PWM control for vibration motor',
-				'Integrating ML model outputs with embedded hardware',
-				'Managing power consumption for wearable device',
-				'Cross-team coordination between ML and hardware teams',
-				'PCB design and fabrication for compact wearable form factor'
-			],
-			results: [
-				'Successfully achieved sub-1 second latency requirement',
-				'Completed PCB design and fabrication',
-				'Integrated ML wake-word detection with hardware control',
-				'Led successful system bring-up and testing'
 			]
 		}
 	},
@@ -270,20 +216,6 @@ The project validated multiple communication protocols including SPI (Serial Per
 				'USB-UART for programming and debugging',
 				'SystemVerilog modules for RISC-V SoC functionality',
 				'Protocol validation: SPI, UART, I²S'
-			],
-			challenges: [
-				'Designing compact board layout in M.2 form factor',
-				'Ensuring signal integrity in 2-layer design',
-				'Power distribution and regulation for multiple voltage rails',
-				'Validating complex SoC interfaces and protocols',
-				'Hardware bring-up and debugging',
-				'SystemVerilog design and verification'
-			],
-			results: [
-				'Successfully designed and fabricated daughter board',
-				'Validated all communication protocols (SPI, UART, I²S)',
-				'Completed SoC bring-up and testing',
-				'Demonstrated proficiency in PCB design and SoC development'
 			]
 		}
 	}

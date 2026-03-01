@@ -14,7 +14,7 @@ const ProfileSection = () => {
 
 				<div className="space-y-3">
 					<h1 className="text-2xl md:text-3xl font-bold text-gray-900">Vivek Matta</h1>
-					<h2 className="text-lg md:text-xl text-gray-600">Embedded Software Engineer Intern</h2>
+					<h2 className="text-lg md:text-xl text-gray-600">M.S. Computer Engineering @ Northwestern</h2>
 					<div className="h-px w-16 bg-gray-200 mx-auto my-4" />
 				</div>
 
@@ -22,7 +22,7 @@ const ProfileSection = () => {
 					{/* Resume Button */}
 					<div className="pt-2">
 						<a
-							href="/Vivek Matta Master's Resume New Edit.pdf"
+							href="/Vivek Matta.pdf"
 							target="_blank"
 							className="inline-flex items-center justify-center px-4 py-2 border border-gray-300 text-gray-700 font-medium rounded-md hover:bg-gray-50 transition-colors text-sm"
 						>

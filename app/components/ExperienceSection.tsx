@@ -19,17 +19,6 @@ const ExperienceSection = () => {
 			],
 		},
 		{
-			role: 'Smart Mirror Embedded Systems Engineer',
-			company: 'Northwestern University - EE 327',
-			period: 'Mar 2026 - Jun 2026',
-			highlights: [
-				'Co-developed an ESP32-based smart mirror that combines voice interaction, AI-backed responses, PIR presence sensing, addressable LEDs, audio output, and a behind-mirror display',
-				'Designed a custom KiCad schematic and routed PCB integrating 5 V and 3.3 V power, I²S audio, sensor and LED interfaces, status indicators, controls, and UART programming access',
-				'Revised the architecture from Raspberry Pi to ESP32 for simpler Wi-Fi connectivity and added a Class-D amplifier to support reliable speaker output',
-				'Diagnosed shared power and ground interference between high-current LEDs and noise-sensitive audio circuitry during subsystem bring-up',
-			],
-		},
-		{
 			role: 'Embedded Software Engineer Intern',
 			company: 'Cambridge Mobile Telematics',
 			period: 'June 2025 – Aug 2025',
@@ -51,33 +40,12 @@ const ExperienceSection = () => {
 			],
 		},
 		{
-			role: 'Undergraduate Student Researcher - SoCET',
-			company: 'Purdue University',
-			period: 'Jan 2025 - May 2025',
-			highlights: [
-				'Designed custom test boards with eFabless and STM32 chips',
-				'Developed high-performance FPGA board design',
-				'Created schematics in KiCad 8',
-			],
-		},
-		{
 			role: 'Software Engineer Intern',
 			company: 'Cambridge Mobile Telematics',
 			period: 'June 2024 – Aug 2024',
 			highlights: [
 				'Integrated Twilio and ConnectedU APIs to retrieve and store LTE data usage for over 12,000 SIM cards in Amazon Redshift, managing 5 GB of data daily and ensuring support for multiple SIM vendors',
 				'Developed comprehensive data visualization dashboards in Tableau and implemented operational alarms, resulting in a 50% reduction in response time to anomalous data usage.',
-			],
-		},
-		{
-			role: 'Power Conversion Board Designer',
-			company: 'Purdue IEEE ROV Team',
-			period: 'Sep 2022 - Feb 2023',
-			highlights: [
-				'Designed a stacked power-conversion PCB that transforms a nominal 12 V vehicle supply into regulated 5.2 V/3 A and 3.3 V/1 A rails',
-				'Selected replacement buck-converter and linear-regulator components through datasheet analysis, availability research, solderability review, and BOM development',
-				'Coordinated connector placement with the power-distribution team and routed high-current paths within a reduced mechanical envelope',
-				'Iterated the board through design reviews, adding test points, ground vias, power-rail indicators, clearer routing, and manufacturing handoff documentation',
 			],
 		},
 	];

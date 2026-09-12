@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getProjectBySlug, getAllProjectSlugs } from '../../data/projects';
 
 export async function generateStaticParams() {
@@ -94,6 +95,103 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 					</div>
 				</div>
 
+				{/* Featured project artifact */}
+				{project.featuredImage && (
+					<figure className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+						<a
+							href={project.featuredImage.src}
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label={`Open full-size image: ${project.featuredImage.alt}`}
+							className="block"
+						>
+							<Image
+								src={project.featuredImage.src}
+								alt={project.featuredImage.alt}
+								width={project.featuredImage.width}
+								height={project.featuredImage.height}
+								priority
+								sizes="(min-width: 896px) 896px, 100vw"
+								className={project.featuredImage.cropToContent === 'square'
+									? 'aspect-square w-full object-cover object-top transition-opacity hover:opacity-95'
+									: project.featuredImage.cropToContent === 'bottom'
+										? 'aspect-[4/3] w-full object-cover object-bottom transition-opacity hover:opacity-95'
+										: project.featuredImage.cropToContent === 'center'
+											? 'aspect-[5/6] w-full object-cover object-center transition-opacity hover:opacity-95'
+											: project.featuredImage.cropToContent
+												? 'aspect-[6/5] w-full object-cover object-top transition-opacity hover:opacity-95'
+												: 'h-auto w-full transition-opacity hover:opacity-95'}
+							/>
+						</a>
+						{project.featuredImage.caption && (
+							<figcaption className="border-t border-gray-200 px-4 py-3 text-sm text-gray-600">
+								{project.featuredImage.caption} Select the image to view it at full size.
+							</figcaption>
+						)}
+					</figure>
+				)}
+
+				{project.imageGallery && project.imageGallery.length > 0 && (
+					<div className="grid gap-4 sm:grid-cols-2">
+						{project.imageGallery.map((image) => (
+							<figure key={image.src} className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+								<a
+									href={image.src}
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={`Open full-size image: ${image.alt}`}
+									className={image.cropToContent === 'landscape'
+										? 'flex aspect-[4/3] items-center justify-center'
+										: image.cropToContent === 'center'
+											? 'flex aspect-[3/4] items-center justify-center'
+											: 'flex aspect-[9/16] items-center justify-center p-3'}
+								>
+									<Image
+										src={image.src}
+										alt={image.alt}
+										width={image.width}
+										height={image.height}
+										sizes="(min-width: 640px) 432px, 100vw"
+										className={image.cropToContent === 'landscape'
+											? 'h-full w-full object-cover transition-opacity hover:opacity-95'
+											: image.cropToContent === 'center'
+												? 'h-full w-full object-cover object-center transition-opacity hover:opacity-95'
+												: 'h-full w-full object-contain transition-opacity hover:opacity-95'}
+									/>
+								</a>
+								{image.caption && (
+									<figcaption className="border-t border-gray-200 px-4 py-3 text-sm text-gray-600">
+										{image.caption}
+									</figcaption>
+								)}
+							</figure>
+						))}
+					</div>
+				)}
+
+				{project.documents && project.documents.length > 0 && (
+					<section className="bg-white rounded-xl border border-gray-200 p-6" aria-labelledby="project-files-heading">
+						<h2 id="project-files-heading" className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
+							Project Files
+						</h2>
+						<div className="grid gap-3 sm:grid-cols-2">
+							{project.documents.map((document) => (
+								<a
+									key={document.href}
+									href={document.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="group rounded-lg border border-gray-200 bg-gray-50 p-4 transition-colors hover:border-blue-300 hover:bg-blue-50"
+								>
+									<span className="block font-medium text-gray-900 group-hover:text-blue-700">{document.title}</span>
+									<span className="mt-1 block text-sm leading-relaxed text-gray-600">{document.description}</span>
+									<span className="mt-2 block text-sm font-medium text-blue-600">View PDF <span aria-hidden="true">↗</span></span>
+								</a>
+							))}
+						</div>
+					</section>
+				)}
+
 				{/* Full Description */}
 				<div className="bg-white rounded-xl border border-gray-200 p-6">
 					<h2 className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
@@ -138,6 +236,44 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 												</svg>
 											</div>
 											<span className="text-gray-700 text-sm leading-relaxed">{feature}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+						)}
+
+						{project.details.challenges && project.details.challenges.length > 0 && (
+							<div className="bg-white rounded-xl border border-gray-200 p-6">
+								<h2 className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
+									Challenges
+								</h2>
+								<ul className="space-y-3">
+									{project.details.challenges.map((challenge, index) => (
+										<li key={index} className="flex items-start gap-3">
+											<div className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+												<span className="text-xs font-bold text-orange-600" aria-hidden="true">!</span>
+											</div>
+											<span className="text-gray-700 text-sm leading-relaxed">{challenge}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+						)}
+
+						{project.details.results && project.details.results.length > 0 && (
+							<div className="bg-white rounded-xl border border-gray-200 p-6">
+								<h2 className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
+									Results
+								</h2>
+								<ul className="space-y-3">
+									{project.details.results.map((result, index) => (
+										<li key={index} className="flex items-start gap-3">
+											<div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+												<svg className="w-3 h-3 text-green-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+													<path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+												</svg>
+											</div>
+											<span className="text-gray-700 text-sm leading-relaxed">{result}</span>
 										</li>
 									))}
 								</ul>

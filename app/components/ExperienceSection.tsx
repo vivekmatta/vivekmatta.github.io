@@ -8,6 +8,15 @@ interface Experience {
 const ExperienceSection = () => {
 	const experiences: Experience[] = [
 		{
+			role: 'Electrical Engineer II',
+			company: 'Raytheon',
+			period: 'Aug 2026 - Present',
+			highlights: [
+				'Work alongside electrical engineers investigating analog, digital, RF, and power hardware across laboratory and production test workflows',
+				'Review schematics, engineering drawings, and test procedures in support of hardware investigations and laboratory activities',
+			],
+		},
+		{
 			role: 'Graduate Student Researcher',
 			company: 'Northwestern University - Prof. David Zaretsky',
 			period: 'Jan 2026 - Present',

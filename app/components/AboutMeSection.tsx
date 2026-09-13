@@ -9,11 +9,11 @@ const AboutMeSection = () => {
 
 				<div className="space-y-4">
 					<p className="text-sm md:text-base text-gray-600 leading-relaxed">
-						I am an M.S. Computer Engineering student at Northwestern University, building on a Bachelor&apos;s degree in Computer Engineering from Purdue University. My work spans embedded systems, machine learning at the edge, PCB design, and hardware-software integration.
+						I am currently an Electrical Engineer II at Raytheon. I hold an M.S. in Computer Engineering from Northwestern University and a B.S. in Computer Engineering with a Mathematics minor from Purdue University.
 					</p>
 
 					<p className="text-sm md:text-base text-gray-600 leading-relaxed">
-						When I&apos;m not coding or designing circuits, you can find me hanging out with friends, working on personal projects, or watching movies. I believe in maintaining a healthy work-life balance and finding inspiration from both technical challenges and everyday experiences.
+						My work and projects span electrical hardware, embedded systems, PCB design, edge machine learning, and hardware-software integration. Outside of engineering, I enjoy spending time with friends, developing personal projects, and watching movies.
 					</p>
 				</div>
 			</div>

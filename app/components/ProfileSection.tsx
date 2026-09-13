@@ -14,7 +14,8 @@ const ProfileSection = () => {
 
 				<div className="space-y-3">
 					<h1 className="text-2xl md:text-3xl font-bold text-gray-900">Vivek Matta</h1>
-					<h2 className="text-lg md:text-xl text-gray-600">M.S. Computer Engineering @ Northwestern</h2>
+					<h2 className="text-lg md:text-xl text-gray-700">Electrical Engineer II @ Raytheon</h2>
+					<p className="text-sm text-gray-500">M.S. Computer Engineering, Northwestern University</p>
 					<div className="h-px w-16 bg-gray-200 mx-auto my-4" />
 				</div>
 
